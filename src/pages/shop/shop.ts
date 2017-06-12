@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { BuyoutPage } from '../buyout/buyout'
 @IonicPage()
 @Component({
   selector: 'page-shop',
@@ -9,6 +9,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ShopPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  onBuy(productData: {name:string, quantity:number}) {
+    console.log(productData);
+    this.navCtrl.push(BuyoutPage,productData);
   }
 
   ionViewDidLoad() {
